@@ -84,6 +84,7 @@ public class PowerTransmission {
 			 		+ "<th>Commercial Area Units</th><th>Residential Area Units</th>"
 			 		+ "<th>Agriculture Area Units</th>"
 			 		+ "<th>Transmitted Date</th>"
+			 		+ "<th>Total units</th>"
 			 		+ "<th>Update</th>"
 			 		+ "<th>Remove</th></tr>"; 
 			
@@ -99,12 +100,20 @@ public class PowerTransmission {
 			 String t_Aresidential = rs.getString("t_Aresidential"); 
 			 String t_Aagriculture = rs.getString("t_Aagriculture"); 
 			 String t_date = rs.getString("t_date"); 
+			 
+			 //Calculation
+			 float newAcommercial = Float.parseFloat(t_Acommercial);
+			 float newAresidential = Float.parseFloat(t_Aresidential);		
+			 float newAagriculture = Float.parseFloat(t_Aagriculture);		
+				
+			 float totalUnit =  newAcommercial + newAresidential + newAagriculture;
 			 // Add into the html table
 			 output += "<tr><td><input id='hidItemIDUpdate' name='hidItemIDUpdate' type='hidden' value='"+ptid+"'>"+t_ID+"</td>"; 
 			 output += "<td>" + t_Acommercial + "</td>"; 
 			 output += "<td>" + t_Aresidential + "</td>"; 
 			 output += "<td>" + t_Aagriculture + "</td>"; 
 			 output += "<td>" + t_date + "</td>"; 
+			 output += "<td>" + totalUnit + "</td>"; 
 			 // buttons
 			 output += "<td><input name='btnUpdate' type='button' value='Update' "
 					 + "class='btnUpdate btn btn-secondary' data-ptid='" + ptid + "'></td>"

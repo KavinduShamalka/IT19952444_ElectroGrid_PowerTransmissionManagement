@@ -126,23 +126,17 @@ function validatePTForm()
 	{
 	return "Insert ommercial Name.";
 	}
-
-// PRICE-------------------------------
-
-		if ($("#t_Aresidential").val().trim() == "")
+	if ($("#t_Aresidential").val().trim() == "")
 	{
 	return "Insert agriculture Name.";
 	}
-	
-   if ($("#t_Aagriculture").val().trim() == "")
+    if ($("#t_Aagriculture").val().trim() == "")
 	{
 	return "Insert residential Name.";
 	}
-
-if ($("#t_date").val().trim() == ""){
-	
-	return "Insert Item Date.";
-}
+	if ($("#t_date").val().trim() == ""){
+		return "Insert Item Date.";
+	}
 	return true;
 }/**
  * 
